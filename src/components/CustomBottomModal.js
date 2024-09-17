@@ -19,7 +19,7 @@ const CustomBottomModal = forwardRef(
     ref
   ) => {
     // height at which the bottom sheet snaps to the screen
-    const snapPoints = useMemo(() => ["40%"], []);
+    const snapPoints = useMemo(() => ["40", "60%"], []);
 
     return (
       <BottomSheetModal
@@ -39,9 +39,7 @@ const CustomBottomModal = forwardRef(
           <Text style={[styles.title, customStyles.title]}>{title}</Text>
 
           {/* Description */}
-          <Text style={[styles.description, customStyles.description]}>
-            {description}
-          </Text>
+          <Text style={[styles.description, customStyles.description]}>{description}</Text>
 
           {/* Buttons */}
           <View style={styles.buttonRow}>
@@ -68,12 +66,14 @@ const styles = StyleSheet.create({
   modalContainer: {
     backgroundColor: "#FFF",
     borderRadius: 40,
+    // height: 50,
   },
   contentContainer: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
-    margin: 20,
+    // justifyContent: "center",
+    //margin: 20,
+    paddingVertical: Mixins.scaleSize(10),
   },
   title: {
     fontSize: Typography.FONT_SIZE_20,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     color: Colors.MAIN_TEXT,
     fontSize: Typography.FONT_SIZE_16,
     fontFamily: Typography.FONT_TITLE_BOLD,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   confirmButton: {
     backgroundColor: Colors.LIGHT_CORAL,
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     color: Colors.THEMEWHITE,
     fontSize: Typography.FONT_SIZE_16,
     fontFamily: Typography.FONT_TITLE_BOLD,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 

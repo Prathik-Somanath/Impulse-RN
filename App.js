@@ -1,18 +1,17 @@
 // App.js
 import React, { useEffect } from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, SafeAreaView } from "react-native";
 import MainScreen from "./src/screens/MainScreen";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
 
 export default function App() {
-
   // Loading the fonts
   const [loaded, error] = useFonts({
-    'Urbanist-Bold': require('./src/assets/fonts/Urbanist-Bold.ttf'),
-    'Urbanist-Regular': require('./src/assets/fonts/Urbanist-Regular.ttf'),
+    "Urbanist-Bold": require("./src/assets/fonts/Urbanist-Bold.ttf"),
+    "Urbanist-Regular": require("./src/assets/fonts/Urbanist-Regular.ttf"),
   });
 
   // wait for the fonts to load
@@ -31,7 +30,9 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ScrollView>
         <BottomSheetModalProvider>
-          <MainScreen />
+          <SafeAreaView>
+            <MainScreen />
+          </SafeAreaView>
         </BottomSheetModalProvider>
       </ScrollView>
     </GestureHandlerRootView>

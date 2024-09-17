@@ -28,17 +28,14 @@ const ProfileImgSection = () => {
     <View style={styles.container}>
       {/* Circular Profile Image */}
       <View style={styles.imageContainer}>
-        <Image
-          source={require("../assets/images/profile.png")}
-          style={styles.profileImage}
-        />
+        <Image source={require("../assets/images/profile.png")} style={styles.profileImage} />
         <RenderFire />
         <PopupContainer
           isVisible={showBubble}
           content={"Longest Streak"}
           handleClose={handleStreakClose}
-          CustomComponent={RenderFire}  // render the item for tooltip
-          customToolStyle={{ marginTop: Mixins.scaleSize(-5) }}
+          CustomComponent={RenderFire} // render the item for tooltip
+          customToolStyle={{ marginTop: Mixins.scaleSize(-20) }}
         />
       </View>
 

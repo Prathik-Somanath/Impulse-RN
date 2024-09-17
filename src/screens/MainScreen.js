@@ -13,9 +13,8 @@ import { infoData, badgesData, categoriesData } from "../assets/data"
 import { Colors, Typography, Spacing, Mixins } from "../assets/styles"
 
 const MainScreen = () => {
-
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const bottomSheetRef = useRef(null);    // required to open the bottom modal sheet
+  const bottomSheetRef = useRef(null); // required to open the bottom modal sheet
   const { dismiss } = useBottomSheetModal();
 
   // functions to handle the bottom modal sheet
@@ -37,7 +36,7 @@ const MainScreen = () => {
             name={"heart-dislike-outline"}
             size={Mixins.scaleSize(35)}
             color={Colors.RED}
-            style={{ transform: [{ rotateY: "180deg" }], fontWeight: 'condensedBold'  }}
+            style={{ transform: [{ rotateY: "180deg" }], fontWeight: "condensedBold" }}
           />
         </View>
       </View>
@@ -83,9 +82,9 @@ const MainScreen = () => {
         cancelText="No"
         CustomComponent={renderModalHealth}
         customStyles={{
-          modalContainer: { padding: 30 },
+          modalContainer: {},
           confirmButton: {
-            backgroundColor: "#FF6A6A",
+            backgroundColor: Colors.RED_CORAL,
             width: "50%",
             borderRadius: 20,
             alignItems: "center",
@@ -100,12 +99,7 @@ const MainScreen = () => {
 
       {/* Is used to blur the background when the bottom sheet modal opens */}
       {modalIsOpen ? (
-        <BlurView
-          style={styles.absolute}
-          intensity={8}
-          tint="dark"
-          experimentalBlurMethod="dimezisBlurView"
-        />
+        <BlurView style={styles.absolute} intensity={8} tint="dark" experimentalBlurMethod="dimezisBlurView" />
       ) : null}
     </View>
   );
@@ -127,7 +121,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: Typography.FONT_SIZE_20,
     fontWeight: "bold",
-    fontFamily: Typography.FONT_TITLE_BOLD
+    fontFamily: Typography.FONT_TITLE_BOLD,
   },
   sectionTitle: {
     fontSize: Typography.FONT_SIZE_16,
@@ -153,7 +147,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: Spacing.SCALE_20,
-    zIndex: -1
+    zIndex: -1,
   },
   innerCircle: {
     width: Mixins.scaleSize(70),
@@ -161,7 +155,7 @@ const styles = StyleSheet.create({
     borderRadius: Mixins.scaleSize(35),
     backgroundColor: "#FED5D7",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
 });
 
