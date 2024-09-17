@@ -1,3 +1,5 @@
+// Data for information section
+
 const infoData = [
     {
       title: '25-25-2024', 

@@ -1,3 +1,4 @@
+// data for badges section
 const badgesData = [
     {
       id: '1',
